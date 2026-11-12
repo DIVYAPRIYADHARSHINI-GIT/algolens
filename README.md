@@ -6,8 +6,8 @@ A free algorithm visualiser that runs entirely in your browser. Pick a sorting, 
 pathfinding or graph algorithm, load or draw the input, and watch it run one step at a time
 with highlighted pseudocode, live counters and a plain-language explanation of every step.
 
-- **Live demo:** _(added after deployment — see "Live demo" below)_
-- **Repository:** _(added after deployment)_
+- **Live demo:** <https://algolens-omega.vercel.app>
+- **Repository:** <https://github.com/DIVYAPRIYADHARSHINI-GIT/algolens>
 
 ---
 
@@ -103,6 +103,20 @@ the current picture as a PNG (also copied to the clipboard where supported).
 | Fonts | Inter and JetBrains Mono, self-hosted via `@fontsource-variable` |
 | Charts / renderers | Hand-written SVG and CSS grid — no chart library |
 | Tests | Vitest + fast-check (property-based) + Playwright + axe-core |
+
+### Measured performance
+
+Measured with `requestAnimationFrame` inside the real page (`npm run probe:perf`):
+
+| Scenario | Frame rate |
+| --- | --- |
+| 100 bars, bubble sort at 8x | 60 fps |
+| 100 bars at 1x | 60 fps |
+| 60 x 40 grid, Dijkstra at 8x | 39 fps |
+| Graph editor, Dijkstra at 4x | 60 fps |
+| Main thread during a 100-5,000 benchmark | 61 fps |
+
+Six seeks across a 12,441-step trace took **95 ms** in total.
 
 Every dependency is free, well-maintained and pinned to an exact version. The algorithms, the
 playback engine and all renderers are written from scratch for this project.
@@ -311,7 +325,14 @@ database, no Marketplace integration, and no environment variables of any kind.
 
 ## Live demo
 
-_Added after deployment._
+**<https://algolens-omega.vercel.app>**
+
+This is the production domain listed under Domains in the Vercel project. It was verified to
+open in a fresh browser context with no cookies (the incognito equivalent) and no login, on
+all eleven routes.
+
+`algolens.vercel.app` could not be used: Vercel reports that alias as already in use by
+another account, so Vercel assigned `algolens-omega.vercel.app` instead.
 
 ---
 

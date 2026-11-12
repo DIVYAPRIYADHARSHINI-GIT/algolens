@@ -18,7 +18,8 @@
 		"probe:a11y": "vitest run --config probes/vitest.probe.config.ts probes/a11y.probe.ts",
 		"probe:design": "vitest run --config probes/vitest.probe.config.ts probes/design.probe.ts",
 		"probe:live": "vitest run --config probes/vitest.probe.config.ts probes/live.probe.ts",
-		"test:all": "npm run check && npm run test && npm run probe && npm run probe:a11y && npm run probe:design"
+		"test:all": "npm run check && npm run test && npm run probe && npm run probe:a11y && npm run probe:design && npm run probe:perf",
+		"probe:perf": "vitest run --config probes/vitest.probe.config.ts probes/perf.probe.ts"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "4.0.0",
