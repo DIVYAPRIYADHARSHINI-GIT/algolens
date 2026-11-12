@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "sveltekit",
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "rewrites": [{ "source": "/((?!_app|favicon.svg).*)", "destination": "/200.html" }]
+}
